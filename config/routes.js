@@ -32,8 +32,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
+  // '/': {
+  //   view: 'homepage'
+  // }
+  'GET /lunch/favorite': {
+    controller: 'FrLunchMenuController',
+    action: 'try'
+  },
+  'GET /lunch/special': {
+    controller: 'FrLunchMenuController',
+    action: 'superGet'
   }
 
   /***************************************************************************

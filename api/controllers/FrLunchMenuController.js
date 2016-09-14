@@ -13,13 +13,13 @@ var FrLunchMenuController = {
     if (reqDate.length !== 8 || !validator.isNumeric(reqDate)){
       return res.send(400);
     }
-    FrLunchMenu.find({orderDate: reqDate}).exec(function (err, menu) {
+    FrLunchMenu.find({orderDate: reqDate}).exec(function (err, menus) {
       if (err){
         return res.serverError(err);
-      } else if (menu.length === 0){
+      } else if (menus.length === 0){
         return res.send(404);
       } else{
-        return res.json(200, menu);
+        return res.json(200, menus);
       }
     });
   }

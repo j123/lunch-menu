@@ -31,13 +31,9 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-
-  // '/': {
-  //   view: 'homepage'
-  // }
   'GET /frLunchMenu': {
     controller: 'FrLunchMenuController',
-    action: 'displayMenus'
+    action: 'getMenus'
   }
   /***************************************************************************
   *                                                                          *

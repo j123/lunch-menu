@@ -8,17 +8,15 @@ var validator = require('validator');
 
 var FrLunchMenuController = {
 
-  displayMenus: function (req, res) {
+  getMenus: function (req, res) {
     var reqDate = req.query.orderDate;
-    if (reqDate.length != 8) {
-      return res.send(400);
-    } else if (!validator.isNumeric(reqDate)){
+    if (reqDate.length !== 8 || !validator.isNumeric(reqDate)){
       return res.send(400);
     }
     FrLunchMenu.find({orderDate: reqDate}).exec(function (err, menu) {
       if (err){
         return res.serverError(err);
-      } else if (menu.length == 0){
+      } else if (menu.length === 0){
         return res.send(404);
       } else{
         return res.json(200, menu);

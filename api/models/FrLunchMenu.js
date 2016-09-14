@@ -13,7 +13,7 @@ module.exports = {
     menu: 'string',
     price: 'integer',
     category: 'string',
-    orderDate: 'string',
+    orderDate: 'integer',
     nutritionalInfo: 'string',
     recommend: 'integer',
     halalFood: 'integer'

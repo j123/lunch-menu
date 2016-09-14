@@ -4,7 +4,7 @@ CREATE TABLE frLunchMenu (
   menu VARCHAR(200),
   price INT,
   category VARCHAR(50),
-  orderDate VARCHAR(9),
+  orderDate INT(8),
   nutritionalInfo VARCHAR(200),
   recommend TINYINT(1),
   halalFood TINYINT(1),

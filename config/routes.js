@@ -42,8 +42,11 @@ module.exports.routes = {
   'GET /lunch/special': {
     controller: 'FrLunchMenuController',
     action: 'superGet'
+  },
+  'GET /frLunchMenu': {
+    controller: 'FrLunchMenuController',
+    action: 'displayMenus'
   }
-
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

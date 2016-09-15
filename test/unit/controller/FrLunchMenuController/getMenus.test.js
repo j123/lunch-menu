@@ -4,7 +4,6 @@ var fakeWaterlineChainMethod  = require('waterline-fakes').fakeWaterlineChainMet
 
 var frLunchMenuController = require('../../../../api/controllers/FrLunchMenuController');
 
-
 describe('FrLunchMenusController#getMenus', function () {
   var stub;
 
@@ -12,12 +11,12 @@ describe('FrLunchMenusController#getMenus', function () {
     stub.restore();
   });
 
-  it('should return 200', function (done) {
+  it('should return 200 when orderDate is\'t empty', function (done) {
 
     // given
     var expect = [
       {
-        'menu': 'ハンバーグポン酢かけ香味野菜のせ',
+        'menu': 'ハンバーグ ポン酢かけ香味野菜のせ',
         'price': 465,
         'category': 'SPECIAL',
         'orderDate': 20160905,
@@ -42,7 +41,41 @@ describe('FrLunchMenusController#getMenus', function () {
         done();
       }
     };
-    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod({result: expect}));
+    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod( {result: expect}));
+
+    // when
+    frLunchMenuController.getMenus(req, res);
+  });
+
+  it('should return 200 when orderDate is empty', function (done) {
+
+    // given
+    var expect = [
+      {
+        'menu': 'ハンバーグ ポン酢かけ香味野菜のせ',
+        'price': 465,
+        'category': 'SPECIAL',
+        'orderDate': 20160905,
+        'nutritionalInfo': 'Energy 378kcal  Protain 20.2g  Lipid 20.9g Carbohydrate 38.8g  Salt 3.9g',
+        'recommend': 0,
+        'halalFood': 0,
+        'id': 1,
+        'createdAt': '2016-09-14T09:25:17.000Z',
+        'updatedAt': '2016-09-14T09:25:17.000Z'
+      }
+    ];
+    var req = {
+      query: {}
+    };
+    var res = {
+      json:function (status, message) {
+        // then
+        assert.equal(status, 200);
+        assert.deepEqual(message,expect);
+        done();
+      }
+    };
+    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod( {result: expect}));
 
     // when
     frLunchMenuController.getMenus(req, res);
@@ -103,7 +136,7 @@ describe('FrLunchMenusController#getMenus', function () {
         done();
       }
     };
-    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod({result: expect}));
+    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod( {result: expect}));
 
     // when
     frLunchMenuController.getMenus(req, res);
@@ -125,7 +158,7 @@ describe('FrLunchMenusController#getMenus', function () {
         done();
       }
     };
-    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod({err: expect}));
+    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod( {err: expect}));
 
     // when
     frLunchMenuController.getMenus(req, res);

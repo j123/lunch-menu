@@ -27,7 +27,9 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "./node_modules/.bin/mocha test/bootstrap.test.js test/unit/ --recursive -t 3000",
+    "testcov": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha test/bootstrap.test.js --report html -- test/unit/ --recursive -t 3000"
   },
   "main": "app.js",
   "repository": {
@@ -35,5 +37,12 @@
     "url": "git://github.com/shiina/frLunchMenu.git"
   },
   "author": "shiina",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.5",
+    "waterline-fakes": "^1.0.1"
+  }
 }

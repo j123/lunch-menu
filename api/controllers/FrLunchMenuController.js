@@ -1,4 +1,3 @@
-var validator = require('validator');
 /**
  * FrLunchMenuController
  *
@@ -6,8 +5,9 @@ var validator = require('validator');
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-var FrLunchMenuController = {
+var validator = require ('validator');
 
+var FrLunchMenuController = {
   getMenus: function (req, res) {
     var reqDate = req.query.orderDate;
     if (reqDate.length !== 8 || !validator.isNumeric(reqDate)){
@@ -18,7 +18,7 @@ var FrLunchMenuController = {
         return res.serverError(err);
       } else if (menus.length === 0){
         return res.send(404);
-      } else{
+      } else {
         return res.json(200, menus);
       }
     });

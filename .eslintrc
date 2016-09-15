@@ -1,0 +1,116 @@
+env:
+  node:                     true
+  browser:                  false
+
+globals:
+  sails:                    true
+
+rules:
+  # 中括弧(Opening braces go on the same line)
+  brace-style:              [ 2, 1tbs ]
+
+  # variables are used outside of the block in which they were defined
+  block-scoped-var:         2
+
+  # 変数とプロパティの名前(Use lowerCamelCase for variables, properties and function names)
+  camelcase:                1
+
+  # Require Following Curly Brace Conventions
+  curly:                    [ 2, all ]
+
+  # Require Default Case in Switch Statements
+  default-case:             2
+
+  # Require file to end with single newline
+  eol-last:                 2
+
+  # 同値演算子(Use the === operator)
+  eqeqeq:                   [ 2, smart ]
+
+  # Require Guarding for-in
+  guard-for-in:             0
+
+  # Ensures Callback Error Handling
+  handle-callback-err:      2
+
+  # Limit Maximum Depth
+  max-depth:                [ 1, 3 ]
+
+  # Set Maximum Depth of Nested Callbacks
+  max-nested-callbacks:     [ 1, 4 ]
+
+  # 一行の長さ(80 characters per line)
+  # max-len:                  [ 2, 80, 4 ]
+
+  # require a capital letter for constructors
+  new-cap:                  1
+
+  # Disallow Bitwise Operators
+  no-bitwise:               1
+
+  # disallow trailing commas in object literals
+  comma-dangle:             [ 2, "never" ]
+
+  # Disallow Use of console
+  no-console:               2
+
+  # Disallow Regexs That Look Like Division
+  no-div-regex:             2
+
+  # Disallow Comparisons to null when using == and !=
+  no-eq-null:               2
+
+  # prototype の拡張(Disallow Extending of Native Objects)
+  no-extend-native:         2
+
+  # Disallow Floating Decimals(aimed at eliminating floating decimal points)
+  no-floating-decimal:      2
+
+  # Disallow if as the Only Statmenent in an else Block
+  no-lonely-if:             2
+
+  # Disallow mixed spaces and tabs for indentation
+  no-mixed-spaces-and-tabs: 2
+
+  # disallow process.exit()
+  no-process-exit:          0
+
+  # 末尾の空白(No trailing whitespace)
+  no-trailing-spaces:       [2, { "skipBlankLines": true }]
+
+  # disallow use of variables before they are defined
+  no-use-before-define:     [ 2, nofunc ]
+
+  # disallow dangling underscores in identifiers
+  no-underscore-dangle:     0
+
+  # disallow declaration of variables that are not used in the code
+  no-unused-vars:           1
+
+  # 変数宣言(Declare one variable per var statement) の反対 one-var
+  one-var:                  0
+
+  # クォート(Use single quotes)
+  quotes:                   [ 1, single, avoid-escape ]
+
+  # セミコロン(Use Semicolons)
+  semi:                     [ 2, always ]
+
+  # Require or disallow spaces following keywords
+  # space-after-keywords:     [ 2, always ]
+  keyword-spacing:          2
+
+  # require a space around word operators such as typeof
+  space-unary-ops:          2
+
+  # While formatting preferences are very personal, a number of style guides require or disallow spaces between curly braces
+  object-curly-spacing:     [2, "never"]
+
+  # While formatting preferences are very personal, a number of style guides require or disallow spaces between computed properties
+  computed-property-spacing: [2, "never"]
+
+  # A number of style guides require or disallow spaces between array brackets
+  array-bracket-spacing:     [2, "never"]
+
+  # indent
+  indent:                   [2, 2]

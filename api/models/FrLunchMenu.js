@@ -7,7 +7,7 @@
 
 module.exports = {
 
-   tableName: 'frLunchMenu',
+  tableName: 'frLunchMenu',
 
   attributes: {
     menu: 'string',

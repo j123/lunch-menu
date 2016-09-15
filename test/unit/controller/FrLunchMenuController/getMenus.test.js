@@ -11,7 +11,7 @@ describe('FrLunchMenusController#getMenus', function () {
     stub.restore();
   });
 
-  it('should return 200 when orderDate is\'t empty', function (done) {
+  it('should return 200 when orderDate isn\'t empty', function (done) {
 
     // given
     var expect = [

@@ -73,7 +73,7 @@ INSERT INTO frLunchMenu (
 (
   'クラムチャウダー',
   105,
-  '',
+  'SOUP',
   20160906,
   'Energy 406kcal  Protain 16.1g  Lipid 4.7g Carbohydrate 76.5g  Salt 5.5g',
   0,
@@ -121,6 +121,51 @@ INSERT INTO frLunchMenu (
   'BOWL',
   20160916,
   'Energy 842kcal  Protain 23.3g  Lipid 27.1g Carbohydrate 120.3g  Salt 3.5g',
+  0,
+  0
+),
+(
+  '関西風うどん・そば',
+  205,
+  'JAPANESE NOODLE',
+  20160916,
+  'Energy 258kcal  Protain 8.2g  Lipid 1.3g Carbohydrate 52.4g  Salt 5.0g',
+  0,
+  1
+),
+(
+  '冷やし汁なし坦々麺',
+  465,
+  'CHINESE NOODLE',
+  20160916,
+  'Energy 666kcal  Protain 26.7g  Lipid 28.1g Carbohydrate 72.5g  Salt 6.3g',
+  0,
+  0
+),
+(
+  'けんちん汁',
+  105,
+  'SOUP',
+  20160916,
+  'Energy 75kcal  Protain 3.8g  Lipid 3.2g Carbohydrate 7.6g  Salt 1.5g',
+  0,
+  0
+),
+(
+  'フレッシュトマトとブロッコリーのパスタ',
+  410,
+  'PASTA',
+  20160916,
+  'Energy 405kcal  Protain 13.5g  Lipid 7.2g Carbohydrate 69.2g  Salt 2.9g',
+  1,
+  1
+),
+(
+  'ポークカレー',
+  465,
+  'CURRY',
+  20160916,
+  'Energy 767kcal  Protain 13.8g  Lipid 22.9g Carbohydrate 122.1g  Salt 7.0g',
   0,
   0
 );

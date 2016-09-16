@@ -7,27 +7,36 @@
 
 var validator = require('validator');
 
+
+function decisionValidation(req){
+  var reqDate = req.query.hasOwnProperty('orderDate') ? req.query.orderDate : '';
+  var reqCate = req.query.hasOwnProperty('category') ? req.query.category : '';
+  return !reqDate &&
+         reqDate.length === 8 &&
+         validator.isNumeric(reqDate) &&
+         !reqCate &&
+         validator.isLength(reqCate, {min:1, max: 50}) &&
+         reqCate.match(/^[a-zA-Z0-9\s]$/);
+}
+
 var FrLunchMenuController = {
+
   getMenus: function (req, res) {
 
-    // value of orderDate
-    var reqDate = req.query.hasOwnProperty('orderDate') ? req.query.orderDate : null;
-    // value of category
-    var reqCate = req.query.hasOwnProperty('category') ? req.query.category : null;
-    if (reqDate && (reqDate.length !== 8 || !validator.isNumeric(reqDate)) ||
-        reqCate && ( !validator.isLength(reqCate, {min:1, max: 50}) || reqCate.match(/^[a-zA-Z0-9\s]$/))) {
+    if (decisionValidation(req)) {
       return res.send(400);
     }
-    var criteria;
-    if (reqDate && reqCate) {
-      criteria = {orderDate: reqDate, category: reqCate};
-    } else if (!reqDate && reqCate) {
-      criteria = {category: reqCate};
-    } else if (reqDate && !reqCate) {
-      criteria = {orderDate: reqDate};
-    } else {
-      criteria = null;
+    var reqDate = req.query.hasOwnProperty('orderDate') ? req.query.orderDate : null;
+    var reqCate = req.query.hasOwnProperty('category') ? req.query.category : null;
+
+    var criteria = {};
+    if (reqDate) {
+      criteria.orderDate = reqDate;
     }
+    if (reqCate) {
+      criteria.category = reqCate;
+    }
+
     FrLunchMenu.find(criteria).exec(function (err, menus) {
       if (err){
         return res.serverError(err);

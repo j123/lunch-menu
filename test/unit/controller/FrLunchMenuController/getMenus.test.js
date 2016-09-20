@@ -10,7 +10,7 @@ describe('FrLunchMenusController#getMenus', function () {
     stub.restore();
   });
 
-  it('should return 200 when orderDate is date and category is category', function (done) {
+  it('should return 200 when orderDate and category is match', function (done) {
 
     // should
     var expect = [
@@ -48,7 +48,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 200 when orderDate is date', function (done) {
+  it('should return 200 when orderDate is match', function (done) {
 
     // should
     var expect = [
@@ -85,7 +85,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 200 when category is category', function (done) {
+  it('should return 200 when category is match', function (done) {
 
     // should
     var expect = [
@@ -122,7 +122,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 200 when orderDate is empty and category is category', function (done) {
+  it('should return 200 when orderDate is empty and category is match', function (done) {
 
     // should
     var expect = [
@@ -160,7 +160,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 200 when orderDate is orderDate and category is empty', function (done) {
+  it('should return 200 when orderDate is match and category is empty', function (done) {
 
     // should
     var expect = [
@@ -348,35 +348,14 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 404 when menus  of the orderDate doesn\'t exist', function (done) {
+  it('should return 404 when menus of the orderDate doesn\'t exist', function (done) {
 
     //given
     var expect = [];
     var req = {
       query: {
-        orderDate: '20160950'
-      }
-    };
-    var res = {
-      send:function (status) {
-        // then
-        assert.equal(status, 404);
-        done();
-      }
-    };
-    stub = sinon.stub(FrLunchMenu, 'find', fakeWaterlineChainMethod( {result: expect}));
-
-    // when
-    frLunchMenuController.getMenus(req, res);
-  });
-
-  it('should return 404 when menus  of the caregory doesn\'t exist', function (done) {
-
-    //given
-    var expect = [];
-    var req = {
-      query: {
-        category: 'FRENCH'
+        orderDate: '20160950',
+        category:'FRENCH'
       }
     };
     var res = {

@@ -10,7 +10,7 @@ describe('FrLunchMenusController#getMenus', function () {
     stub.restore();
   });
 
-  it('should return 200 when orderDate isn\'t empty', function (done) {
+  it('should return 200 when orderDate is date', function (done) {
 
     // should
     var expect = [
@@ -121,7 +121,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 404 when menus is not exist', function (done) {
+  it('should return 404 when menus doesn\'t exist', function (done) {
 
     //given
     var expect = [];

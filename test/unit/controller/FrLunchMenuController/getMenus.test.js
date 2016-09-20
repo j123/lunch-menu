@@ -1,7 +1,6 @@
 var assert = require('chai').assert;
 var sinon = require('sinon');
 var fakeWaterlineChainMethod  = require('waterline-fakes').fakeWaterlineChainMethod;
-
 var frLunchMenuController = require('../../../../api/controllers/FrLunchMenuController');
 
 describe('FrLunchMenusController#getMenus', function () {
@@ -13,7 +12,7 @@ describe('FrLunchMenusController#getMenus', function () {
 
   it('should return 200 when orderDate isn\'t empty', function (done) {
 
-    // given
+    // should
     var expect = [
       {
         'menu': 'ハンバーグ ポン酢かけ香味野菜のせ',
@@ -28,6 +27,7 @@ describe('FrLunchMenusController#getMenus', function () {
         'updatedAt': '2016-09-14T09:25:17.000Z'
       }
     ];
+    // given
     var req = {
       query: {
         orderDate: '20160905'
@@ -49,7 +49,7 @@ describe('FrLunchMenusController#getMenus', function () {
 
   it('should return 200 when orderDate is empty', function (done) {
 
-    // given
+    // should
     var expect = [
       {
         'menu': 'ハンバーグ ポン酢かけ香味野菜のせ',
@@ -64,6 +64,7 @@ describe('FrLunchMenusController#getMenus', function () {
         'updatedAt': '2016-09-14T09:25:17.000Z'
       }
     ];
+    // given
     var req = {
       query: {}
     };

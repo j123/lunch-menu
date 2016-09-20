@@ -7,10 +7,10 @@
 
 var validator = require('validator');
 
-
-function decisionValidation(req){
+function validateParmeter (req) {
   var reqDate = req.query.hasOwnProperty('orderDate') ? req.query.orderDate : '';
   var reqCate = req.query.hasOwnProperty('category') ? req.query.category : '';
+
   return !reqDate &&
          reqDate.length === 8 &&
          validator.isNumeric(reqDate) &&
@@ -23,13 +23,14 @@ var FrLunchMenuController = {
 
   getMenus: function (req, res) {
 
-    if (decisionValidation(req)) {
+    if (validateParmeter(req)) {
       return res.send(400);
     }
+
     var reqDate = req.query.hasOwnProperty('orderDate') ? req.query.orderDate : null;
     var reqCate = req.query.hasOwnProperty('category') ? req.query.category : null;
-
     var criteria = {};
+
     if (reqDate) {
       criteria.orderDate = reqDate;
     }

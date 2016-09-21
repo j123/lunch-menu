@@ -10,7 +10,7 @@ describe('FrLunchMenusController#getMenus', function () {
     stub.restore();
   });
 
-  it('should return 200 when orderDate and category is match', function (done) {
+  it('should return 200 when orderDate and category are match', function (done) {
 
     // should
     var expect = [
@@ -198,7 +198,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 200 when orderDate and category is empty', function (done) {
+  it('should return 200 when orderDate and category are empty', function (done) {
 
     // should
     var expect = [
@@ -236,7 +236,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 200 when orderDate and category doesn\'t exist', function (done) {
+  it('should return 200 when orderDate and category don\'t exist', function (done) {
 
     // should
     var expect = [
@@ -348,7 +348,7 @@ describe('FrLunchMenusController#getMenus', function () {
     frLunchMenuController.getMenus(req, res);
   });
 
-  it('should return 404 when menus of the orderDate doesn\'t exist', function (done) {
+  it('should return 404 when menus of the orderDate don\'t exist', function (done) {
 
     //given
     var expect = [];

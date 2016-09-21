@@ -168,4 +168,76 @@ INSERT INTO frLunchMenu (
   'Energy 767kcal  Protain 13.8g  Lipid 22.9g Carbohydrate 122.1g  Salt 7.0g',
   0,
   0
+),
+(
+  '麦育ち四元豚の生姜焼き',
+  500,
+  'SPECIAL',
+  20160921,
+  'Energy 415kcal  Protain 25.8g  Lipid 23.2g Carbohydrate 22.9g  Salt 2.3g',
+  1,
+  0
+),
+(
+  '産地鮮魚',
+  380,
+  'VALUE',
+  20160921,
+  '-',
+  0,
+  1
+),
+(
+  '鶏肉の唐揚げトマト薬味ソース丼',
+  465,
+  'BOWL',
+  20160921,
+  'Energy 929kcal  Protain 32.7g  Lipid 38.4g Carbohydrate 104.8g  Salt 2.7g',
+  0,
+  0
+),
+(
+  '関西風うどん・そば',
+  205,
+  'JAPANESE NOODLE',
+  20160921,
+  'Energy 285kcal  Protain 8.2g  Lipid 1.3g Carbohydrate 52.4g  Salt 5.0g',
+  0,
+  1
+),
+(
+  '和歌山名物 中華そば',
+  465,
+  'CHINESE NOODLE',
+  20160921,
+  'Energy 636kcal  Protain 23.2g  Lipid 28.6g Carbohydrate 65.6g  Salt 7.6g',
+  0,
+  0
+),
+(
+  '豚汁',
+  105,
+  'SOUP',
+  20160921,
+  'Energy 90kcal  Protain 2.3g  Lipid 6.5g Carbohydrate 6.0g  Salt 3.1g',
+  0,
+  0
+),
+(
+  'きのこ和風クリームスパゲティ',
+  410,
+  'PASTA',
+  20160921,
+  'Energy 519kcal  Protain 16.5g  Lipid 16.7g Carbohydrate 73.4g  Salt 2.9g',
+  0,
+  0
+),
+(
+  'ビーフカレー',
+  255,
+  'CURRY',
+  20160921,
+  'Energy 797kcal  Protain 12.9g  Lipid 26.4g Carbohydrate 122.1g  Salt 7.0g',
+  0,
+  0
 );
